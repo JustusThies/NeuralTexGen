@@ -1,6 +1,4 @@
 # NeuralTexGen
-Texture optimization framework using PyTorch
-
 
 This code is meant for simple image-space texture optimization.
 As input you have to provide uv-renderings of the target scene.
@@ -23,7 +21,7 @@ You can use MeshLab for trivial parametrizations, Blender or the UV parametrizat
 
 ### Rendering of the UV maps
 Use a renderer of your choice to render the per frame uvs using the mesh and the camera parameters.
-E.g. an OpenGL based renderer.
+For example, you can use an headless 'EGL-based' OpenGL renderer on your server.
 
 ### Summary
 In the end you should have training pairs consisting of a uv map and a original color image which serves as target image.
