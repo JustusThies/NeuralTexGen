@@ -7,7 +7,7 @@ export DISPLAY=:0
 ## input data ##
 ################
 # sequence name
-SEQ=room1_us
+SEQ=room1
 #SEQ=room1_lqlq
 # filename of the input mesh that also has uv coordinates (*.off is supported)
 MESH_FILENAME=../datasets/$SEQ/room_uv.off

@@ -29,6 +29,8 @@ If you have set the input accordingly you can call:
 
 ```bash prepare_data.sh```
 
+You might need to make the uv renderer executable ```chmod +x preprocessing/uv_renderer```.
+
 ### Summary
 In the end you should have training pairs consisting of a uv map and a original color image which serves as target image.
 
