@@ -29,16 +29,20 @@ In the end you should have training pairs consisting of a uv map and a original 
 
 ## Optimization
 
-### Define a loss function
-First of all, you have to choose a loss function (or you write your own).
+### Define a loss function / loss weights
+First of all, you have to choose the loss weights.
+See 'texture_optimization.sh' and 'options/base_options.py'.
+Feel free to add new loss functions (see 'models/RGBTextures_model.py').
 
 ### Optimize aka 'Train'
 Start optimization over the entire training data corpus.
+'''bash texture_optimization.sh'''
 
 
 ## Misc
-You can use image enhancing techniques or image super-resolution methods to improve results.
+You can use image enhancing techniques or image super-resolution methods to improve the input images.
 An easy to use implementation has been published by Idealo (Github repo)[https://github.com/idealo/image-super-resolution].
+See 'misc/super_res.py' for preprocessing your training data (note that the dataloader resizes the color images to match the uv images, thus, make sure you render the uvs with a higher resolution too).
 
 
 ## Ackowledgements
