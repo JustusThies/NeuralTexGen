@@ -29,8 +29,10 @@ SAVE_FREQ=10
 # loss weights
 LAMBDA_L1=10.0
 LAMBDA_L1_DIFF=20.0
-LAMBDA_REG_TEX=0.1
 LAMBDA_VGG=10.0
+
+# regularizer
+LAMBDA_REG_TEX=0.1
 
 
 ################################################################################
@@ -46,5 +48,5 @@ RESULT_DIR=./results/$TARGET_ACTOR/TEX$TEX_DIM/
 mkdir -p $RESULT_DIR
 
 # training
-python train_acc.py --results_dir $RESULT_DIR --name $NAME --save_epoch_freq $SAVE_FREQ --tex_dim $TEX_DIM --lambda_L1 $LAMBDA_L1 --lambda_L1_Diff $LAMBDA_L1_DIFF --lambda_Reg_Tex $LAMBDA_REG_TEX --lambda_VGG $LAMBDA_VGG --display_env $DISPLAY_NAME --niter $N_ITER --niter_decay $N_ITER_LR_DECAY --dataroot $DATASETS_DIR/$TARGET_ACTOR --model $MODEL --lambda_L1 100 --dataset_mode $DATASET_MODE --gpu_ids $GPUID --lr $LR --batch_size $BATCH_SIZE
+python train_acc.py --results_dir $RESULT_DIR --name $NAME --save_epoch_freq $SAVE_FREQ --tex_dim $TEX_DIM --lambda_L1 $LAMBDA_L1 --lambda_L1_Diff $LAMBDA_L1_DIFF --lambda_Reg_Tex $LAMBDA_REG_TEX --lambda_VGG $LAMBDA_VGG --display_env $DISPLAY_NAME --niter $N_ITER --niter_decay $N_ITER_LR_DECAY --dataroot $DATASETS_DIR/$TARGET_ACTOR --model $MODEL --dataset_mode $DATASET_MODE --gpu_ids $GPUID --lr $LR --batch_size $BATCH_SIZE
 

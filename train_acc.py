@@ -9,6 +9,7 @@ from util.visualizer import Visualizer
 if __name__ == '__main__':
     # training dataset
     opt = BaseOptions().parse()
+    print('>>>>>lambda_L1:', opt.lambda_L1)
     data_loader = CreateDataLoader(opt)
     dataset = data_loader.load_data()
     dataset_size = len(data_loader)

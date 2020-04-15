@@ -58,6 +58,7 @@ class RGBTexturesModel(BaseModel):
             self.criterionL2 = torch.nn.MSELoss(reduction='mean')
 
             if self.opt.lambda_VGG > 0.0:
+                print('initialize VGG loss')
                 self.vggloss = VGG_LOSS.VGGLOSS().to(self.device)
 
             # initialize optimizers
@@ -104,9 +105,9 @@ class RGBTexturesModel(BaseModel):
 
 
         ## absolute rendering error
-        self.loss_G_L1_Rendering = 0.0
+        self.loss_G_L1 = 0.0
         if self.opt.lambda_L1>0.0:
-            self.loss_G_L1_Rendering += self.opt.lambda_L1 * self.criterionL1(masked(self.fake), masked(self.target) ) / mask_weight
+            self.loss_G_L1 += self.opt.lambda_L1 * self.criterionL1(masked(self.fake), masked(self.target) ) / mask_weight
 
 
         ## loss based on image differences (more invariant to color shifts)
@@ -122,16 +123,16 @@ class RGBTexturesModel(BaseModel):
 
 
         ## VGG loss
-        self.loss_G_VGG_Rendering = 0.0
+        self.loss_G_VGG = 0.0
         if self.opt.lambda_VGG>0.0:
-            self.loss_G_VGG_Rendering += self.opt.lambda_VGG * self.vggloss(masked(self.fake), masked(self.target))
+            self.loss_G_VGG += self.opt.lambda_VGG * self.vggloss(masked(self.fake), masked(self.target))
 
 
         ## texture regularizer
         if self.opt.lambda_Reg_Tex>0.0:
             self.loss_G_TexReg = self.opt.lambda_Reg_Tex * self.texture.regularizer()
 
-        self.loss_G_total = self.loss_G_L1_Rendering + self.loss_G_VGG_Rendering + self.loss_G_TexReg + self.loss_G_L1_Diff
+        self.loss_G_total = self.loss_G_L1 + self.loss_G_L1_Diff + self.loss_G_VGG + self.loss_G_TexReg
 
         self.loss_G_total.backward()
 

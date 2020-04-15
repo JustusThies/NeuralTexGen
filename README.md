@@ -43,6 +43,9 @@ Feel free to add new loss functions (see 'models/RGBTextures_model.py').
 
 ### Optimize aka 'Train'
 Start a visdom server that visualizes the training curve.
+
+```visdom```
+
 Start optimization over the entire training data corpus using:
 
 ```bash texture_optimization.sh```
