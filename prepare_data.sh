@@ -2,13 +2,15 @@ set -ex
 # . prepare_data.sh &
 export DISPLAY=:0
 
+# working directory
+cd preprocessing 
 
 ################
 ## input data ##
 ################
 # sequence name
 SEQ=room1
-#SEQ=room1_lqlq
+
 # filename of the input mesh that also has uv coordinates (*.off is supported)
 MESH_FILENAME=../datasets/$SEQ/room_uv.off
 # directory of the camera information (filenames are assumed to be 0.txt, 1.txt, ....)
@@ -55,6 +57,5 @@ while read -r file_name; do cp $CAMERA_DIR${file_name%?}.txt $OUTPUT_DIR_IMG ; d
 ## render the uv maps ##
 ########################
 CAMERA_DIR_NEW=$OUTPUT_DIR_IMG
-cd preprocessing 
 ./uv_renderer $MESH_FILENAME $CAMERA_DIR_NEW $OUTPUT_DIR_UV $WIDTH_ORIG $HEIGHT_ORIG $WIDTH_RENDERING $HEIGHT_RENDERING
 cd ..
