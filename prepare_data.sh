@@ -11,7 +11,8 @@ SEQ=room1_us
 #SEQ=room1_lqlq
 # filename of the input mesh that also has uv coordinates (*.off is supported)
 MESH_FILENAME=../datasets/$SEQ/room_uv.off
-# directory of the camera information (per frame extrinsics and intrinsics, both stored as 4x4 matrices)
+# directory of the camera information (filenames are assumed to be 0.txt, 1.txt, ....)
+# (each file contains per frame extrinsics and intrinsics, both stored as 4x4 matrices)
 CAMERA_DIR=../datasets/$SEQ/frames/ZMojNkEp431/camera/
 # directory of the original images (filenames are assumed to be 0.jpg, 1.jpg, ....)
 IMG_DIR=../datasets/$SEQ/frames/ZMojNkEp431/color/

@@ -23,6 +23,8 @@ You can use MeshLab for trivial parametrizations, Blender or the UV parametrizat
 Use a renderer of your choice to render the per frame uvs using the mesh and the camera parameters.
 For example, you can use an headless 'EGL-based' OpenGL renderer on your server (see 'preprocessing' folder).
 Caution: do not render with anti-aliasing this will lead to wrong uvs! Also never upsample uv renderings!
+It is recommended to render the uv maps at a higher resolution than the color images to circumvent sampling issues (undersampling of the texture).
+Have a look at the 'prepare_data.sh' script that calls an OpenGL renderer.
 ```bash prepare_data.sh```
 
 ### Summary
