@@ -22,6 +22,7 @@ You can use MeshLab for trivial parametrizations, Blender or the UV parametrizat
 ### Rendering of the UV maps
 Use a renderer of your choice to render the per frame uvs using the mesh and the camera parameters.
 For example, you can use an headless 'EGL-based' OpenGL renderer on your server.
+Caution: do not render with anti-aliasing this will lead to wrong uvs! Also never upsample uv renderings!
 
 ### Summary
 In the end you should have training pairs consisting of a uv map and a original color image which serves as target image.
@@ -35,3 +36,10 @@ First of all, you have to choose a loss function (or you write your own).
 Start optimization over the entire training data corpus.
 
 
+## Misc
+You can use image enhancing techniques or image super-resolution methods to improve results.
+An easy to use implementation has been published by Idealo (Github repo)[https://github.com/idealo/image-super-resolution].
+
+
+## Ackowledgements
+This code is based on the Pix2Pix/CycleGAN framework (Github repo)[https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix].
