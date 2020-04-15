@@ -25,6 +25,8 @@ For example, you can use an headless 'EGL-based' OpenGL renderer on your server 
 Caution: do not render with anti-aliasing this will lead to wrong uvs! Also never upsample uv renderings!
 It is recommended to render the uv maps at a higher resolution than the color images to circumvent sampling issues (undersampling of the texture).
 Have a look at the 'prepare_data.sh' script that calls an OpenGL renderer.
+If you have set the input accordingly you can call:
+
 ```bash prepare_data.sh```
 
 ### Summary
@@ -38,7 +40,9 @@ See 'texture_optimization.sh' and 'options/base_options.py'.
 Feel free to add new loss functions (see 'models/RGBTextures_model.py').
 
 ### Optimize aka 'Train'
-Start optimization over the entire training data corpus.
+Start a visdom server that visualizes the training curve.
+Start optimization over the entire training data corpus using:
+
 ```bash texture_optimization.sh```
 
 
