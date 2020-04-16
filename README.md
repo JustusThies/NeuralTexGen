@@ -60,6 +60,8 @@ You can use image enhancing techniques or image super-resolution methods to impr
 An easy to use implementation has been published by Idealo [(Github repo)](https://github.com/idealo/image-super-resolution).
 See 'misc/super_res.py' for preprocessing your training data (note that the dataloader resizes the color images to match the uv images, thus, make sure you render the uvs with a higher resolution too).
 
+The 'tmux_smpl.sh' script has nothing to do with the texture optimization but simplifies the tmux session handling ;)
+
 ## Notes
 
 Note that this type of image-space texture optimization can have sampling issues when the texture that we optimize for is undersampled.
