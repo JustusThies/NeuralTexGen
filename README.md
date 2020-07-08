@@ -54,6 +54,13 @@ Start optimization over the entire training data corpus using:
 ```bash texture_optimization.sh```
 
 
+### Example
+
+Below you see an example using an L1 loss. It is applied to a Matterport scene with 89 images with a resolution of 320x256 each (which is quite low).
+Nevertheless, we can reconstruct a reasonable texture. Note that in this example, we did not apply any correction for whitebalancing / color normalization.
+
+![L1 texture optimization](images/example_l1_low_res_input.jpg "L1 texture optimization.")
+
 ## Misc
 
 You can use image enhancing techniques or image super-resolution methods to improve the input images.
